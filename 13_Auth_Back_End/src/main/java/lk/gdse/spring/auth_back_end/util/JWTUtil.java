@@ -24,7 +24,14 @@ public class JWTUtil {
                 .signWith(Keys.hmacShaKeyFor(secretKey.getBytes())
                 ,SignatureAlgorithm.HS256).compact();
     }
-
+    public String extractUsername(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+}
     public boolean validateToken(String token) {
         try{
             Jwts.parserBuilder()
@@ -33,7 +40,7 @@ public class JWTUtil {
                     .parseClaimsJws(token);
             return true;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            return false;
         }
     }
 }
