@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .dashboard-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+    }
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+    .sidebar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      min-height: calc(100vh - 140px);
+    }
+    .nav-link {
+      color: #6c757d;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      margin: 2px 0;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .chart-container {
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">
+      <i class="bi bi-speedometer2 me-2"></i>Dashboard
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="#"><i class="bi bi-bell me-1"></i>Notifications</a>
+        <a class="nav-link" href="#"><i class="bi bi-gear me-1"></i>Settings</a>
+        <a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Profile</a>
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-right me-1"></i>Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 80px; padding: 20px;">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 mb-4">
+      <div class="sidebar p-3">
+        <h6 class="text-muted text-uppercase mb-3">Menu</h6>
+        <nav class="nav flex-column">
+          <a class="nav-link active" href="#"><i class="bi bi-house me-2"></i>Home</a>
+          <a class="nav-link" href="#"><i class="bi bi-graph-up me-2"></i>Analytics</a>
+          <a class="nav-link" href="#"><i class="bi bi-people me-2"></i>Users</a>
+          <a class="nav-link" href="#"><i class="bi bi-folder me-2"></i>Projects</a>
+          <a class="nav-link" href="#"><i class="bi bi-chat-dots me-2"></i>Messages</a>
+          <a class="nav-link" href="#"><i class="bi bi-calendar-event me-2"></i>Calendar</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10">
+      <!-- Welcome Section -->
+      <div class="dashboard-card p-4 mb-4">
+        <h2 class="mb-1">Welcome back, Prasad</h2>
+        <p class="text-muted">Here's what's happening with your account today.</p>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="row mb-4">
+        <div class="col-md-3 mb-3">
+          <div class="stat-card p-4 text-center">
+            <i class="bi bi-people display-4 mb-3"></i>
+            <h3 class="mb-1">1,234</h3>
+            <p class="mb-0">Total Users</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="stat-card p-4 text-center">
+            <i class="bi bi-graph-up display-4 mb-3"></i>
+            <h3 class="mb-1">5,678</h3>
+            <p class="mb-0">Page Views</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="stat-card p-4 text-center">
+            <i class="bi bi-currency-dollar display-4 mb-3"></i>
+            <h3 class="mb-1">$12,345</h3>
+            <p class="mb-0">Revenue</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="stat-card p-4 text-center">
+            <i class="bi bi-check-circle display-4 mb-3"></i>
+            <h3 class="mb-1">89</h3>
+            <p class="mb-0">Orders</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Sidebar navigation
+  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Remove active class from all links
+      document.querySelectorAll('.sidebar .nav-link').forEach(l => l.classList.remove('active'));
+
+      // Add active class to clicked link
+      this.classList.add('active');
+
+      // Update main content based on selection (placeholder)
+      console.log('Navigated to:', this.textContent.trim());
+    });
+  });
+
+  // Add some interactive animations
+  document.querySelectorAll('.stat-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+</script>
+</body>
+</html>
