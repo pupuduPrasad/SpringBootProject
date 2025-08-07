@@ -1,19 +1,21 @@
-package lk.gdse.spring.auth_back_end.dto;
+package lk.ijse.project.backend.entity;
 
 import jakarta.persistence.*;
-import lk.gdse.spring.auth_back_end.entity.Role;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+@Builder
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
+    private String userName;
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
