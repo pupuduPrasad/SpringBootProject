@@ -27,12 +27,37 @@
         </processorPath>
         <module name="Auth_Back_End" />
       </profile>
+      <profile name="Annotation profile for 14_Sping_Testing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Sping_Testing" />
+      </profile>
+      <profile name="Annotation profile for 14_Spring_Testing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Spring_Testing" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring_14_Testing" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Auth_Back_End" options="-parameters" />
       <module name="O11-Back_End" options="-parameters" />
+      <module name="Sping_Testing" options="-parameters" />
+      <module name="Spring_14_Testing" options="-parameters" />
+      <module name="Spring_Testing" options="-parameters" />
     </option>
   </component>
 </project>
